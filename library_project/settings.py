@@ -32,7 +32,11 @@ ALLOWED_HOSTS = []
 
 INSTALLED_APPS = [
     #my_apps
-    "books",
+    "books.apps.BooksConfig", # можна ще так вказувати, воно дозволяє глибше налаштовувати через apps.py
+    "apis.apps.ApisConfig", # можна ще так вказувати, воно дозволяє глибше налаштовувати через apps.py
+
+    #3d_party
+    "rest_framework",
 
     #default
     "django.contrib.admin",
