@@ -35,6 +35,7 @@ INSTALLED_APPS = [
     "todos.apps.TodosConfig",
     # 3rd party
     "rest_framework",
+    "corsheaders",
     #default
     "django.contrib.admin",
     "django.contrib.auth",
@@ -53,6 +54,7 @@ REST_FRAMEWORK = {
 MIDDLEWARE = [
     "django.middleware.security.SecurityMiddleware",
     "django.contrib.sessions.middleware.SessionMiddleware",
+    "corsheaders.middleware.CorsMiddleware", # вище перед CommonMiddleware гарантує, що всі запити будуть правильно оброблені і зможуть бути перевірені на відповідність дозволеним джерелам, перш ніж будуть застосовані інші загальні налаштування.
     "django.middleware.common.CommonMiddleware",
     "django.middleware.csrf.CsrfViewMiddleware",
     "django.contrib.auth.middleware.AuthenticationMiddleware",
@@ -131,3 +133,10 @@ STATIC_URL = "static/"
 # https://docs.djangoproject.com/en/5.2/ref/settings/#default-auto-field
 
 DEFAULT_AUTO_FIELD = "django.db.models.BigAutoField"
+
+CORS_ALLOWED_ORIGINS = (
+"http://localhost:3000",
+"http://localhost:8000",
+)
+
+CSRF_TRUSTED_ORIGINS = ["localhost:3000"] # Що це дає? Цей параметр каже Django: "Я довіряю запитам, які приходять з цього домену — http://localhost:3000." Коли фронт і бекенд на різних доменах або портах (наприклад, React працює на localhost:3000, а Django — на localhost:8000), Django вважає це "крос-доменним запитом" і за замовчуванням блокує CSRF-запит, навіть якщо токен є.
