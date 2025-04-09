@@ -33,7 +33,8 @@ ALLOWED_HOSTS = []
 INSTALLED_APPS = [
     #my apps
     "todos.apps.TodosConfig",
-
+    # 3rd party
+    "rest_framework",
     #default
     "django.contrib.admin",
     "django.contrib.auth",
@@ -42,6 +43,12 @@ INSTALLED_APPS = [
     "django.contrib.messages",
     "django.contrib.staticfiles",
 ]
+
+REST_FRAMEWORK = {
+"DEFAULT_PERMISSION_CLASSES": [ # дозволяє доступ до API будь-кому (без жодних перевірок автентифікації або авторизації)
+"rest_framework.permissions.AllowAny",
+],
+} 
 
 MIDDLEWARE = [
     "django.middleware.security.SecurityMiddleware",
