@@ -35,6 +35,7 @@ INSTALLED_APPS = [
     "accounts.apps.AccountsConfig",
     "blogs.apps.BlogsConfig",
     #3d
+    "rest_framework",
     #default
     "django.contrib.admin",
     "django.contrib.auth",
@@ -125,3 +126,5 @@ STATIC_URL = "static/"
 # https://docs.djangoproject.com/en/5.2/ref/settings/#default-auto-field
 
 DEFAULT_AUTO_FIELD = "django.db.models.BigAutoField"
+
+MEDIA_ROOT = "media/" # хочу щоб під картинки та інші файли були різні директиви тому зробив одну загальну
