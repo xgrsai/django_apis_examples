@@ -1,5 +1,5 @@
 # Setup (ENG)
-## 1. Cloning the repository 
+## 1. Cloning repository 
 First of all, you need to clone the project repository to your local computer. Use the git clone command:<br>
 `git clone <repository URL>`
 ## 2. Create a virtual environment 
