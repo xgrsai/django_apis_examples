@@ -128,3 +128,5 @@ STATIC_URL = "static/"
 DEFAULT_AUTO_FIELD = "django.db.models.BigAutoField"
 
 MEDIA_ROOT = "media/" # хочу щоб під картинки та інші файли були різні директиви тому зробив одну загальну
+
+MEDIA_URL = "media/"
