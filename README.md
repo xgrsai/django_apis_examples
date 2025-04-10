@@ -13,6 +13,7 @@ Activate the virtual environment:
 ## 3. Installing dependencies
 To install all the necessary libraries, run the command:<br>
 `pip install -r requirements.txt`.
+## Execute the next commands in the project directory of your choice. For example, to test the library API, navigate to it with `cd library`
 ## 4. Migrating the database 
 After you create the virtual environment and activate it, you need to perform a database migration. This applies the changes that were defined in your project models to the database:<br>
 `python manage.py migrate`<br>
